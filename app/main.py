@@ -44,6 +44,10 @@ def file_to_base64(file_path):
         file_data = file.read()
     return base64.b64encode(file_data).decode('utf-8')
 
+@app.route('/')
+def init():
+    return '<h1>PDF Converter</h1><h2>file_name (png/html) & base64_data</h2>'
+
 @app.route('/upload', methods=['POST'])
 def upload_file():
     try:
