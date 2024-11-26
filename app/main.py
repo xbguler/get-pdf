@@ -34,7 +34,8 @@ def html_to_pdf(html_data, pdf_filename):
     html_content = base64.b64decode(html_data).decode('utf-8')
 
     # PDF dosyasını oluşturuyoruz
-    config = pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
+    # config = pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
+    config = pdfkit.configuration(wkhtmltopdf='/app/.heroku/python/bin/wkhtmltopdf')
     pdfkit.from_string(html_content, pdf_filename,configuration=config)
     return pdf_filename
 
