@@ -36,8 +36,9 @@ def html_to_pdf(html_data, pdf_filename):
     # PDF dosyasını oluşturuyoruz
     # config = pdfkit.configuration(wkhtmltopdf=r"C:\Program Files\wkhtmltopdf\bin\wkhtmltopdf.exe")
     config = pdfkit.configuration(wkhtmltopdf='/app/bin/wkhtmltopdf')
-    pdfkit.from_string(html_content, pdf_filename,configuration=config)
+    #pdfkit.from_string(html_content, pdf_filename,configuration=config)
     #pdfkit.from_string(html_content, pdf_filename)
+    pdfkit.from_file(html_content, pdf_filename,configuration=config)
     return pdf_filename
 
 # Dosyayı Base64 formatına dönüştürme fonksiyonu
